@@ -1,7 +1,7 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication;
 
 import javax.persistence.*;
-import org.springframework.data.annotation.Id;
+//import org.springframework.data.annotation.Id;
 
 @Entity
 @Table(name="actor")
