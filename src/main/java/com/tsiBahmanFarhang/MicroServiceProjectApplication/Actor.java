@@ -9,6 +9,7 @@ import javax.persistence.*;
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int actor_id;
     String first_name;
     String last_name;
