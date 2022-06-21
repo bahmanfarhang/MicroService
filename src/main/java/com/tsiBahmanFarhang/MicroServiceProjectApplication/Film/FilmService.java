@@ -19,6 +19,10 @@ public class FilmService {
     @Autowired
     FilmRepository filmRepository;
 
+    public FilmService(FilmRepository filmRepository){
+        this.filmRepository = filmRepository;
+    }
+
     //methods
     public List<Film> getAllFilms(){
         return filmRepository.findAll();
@@ -36,4 +40,7 @@ public class FilmService {
         }
         return null;
     }
+
 }
+
+

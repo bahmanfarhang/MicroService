@@ -8,23 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class MicroServiceProjectApplication {
-//    @Autowired
-//    private FilmRepository filmRepository;
-//    @Autowired
-//    private ActorRepository actorRepository;
-//
-//    public MicroServiceProjectApplication(FilmRepository filmRepository, ActorRepository actorRepository) {
-//        this.filmRepository = filmRepository;
-//        this.actorRepository = actorRepository;
-//    }
-//
-//    public MicroServiceProjectApplication(FilmRepository filmRepository) {
-//        this.filmRepository = filmRepository;
-//    }
-//
-//    public MicroServiceProjectApplication(ActorRepository actorRepository) {
-//        this.actorRepository = actorRepository;
-//    }
+
+    @Autowired
+    private FilmRepository filmRepository;
+    @Autowired
+    private ActorRepository actorRepository;
+
+    public MicroServiceProjectApplication() {
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(MicroServiceProjectApplication.class, args);

@@ -1,7 +1,6 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor;
+
 //class for handling all the API
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.Film;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -13,17 +12,20 @@ import java.util.List;
 * */
 
 /*
-* the @RequestMapping is important as it used to map HTTP requests to handler methods of MVC and REST controller, and I
+* the @RequestMapping is important as it is used to map HTTP requests to handler methods of MVC and REST controller, and I
 * named it "api/v1 which I will use in postman"
 * */
 
+
 @RestController
-@RequestMapping("api/v1/actor")
+@RequestMapping("api/v1/actor") //parent url
+//this will allow the communication between the front end
+@CrossOrigin
 public class ActorController {
     @Autowired
     ActorService actorService;
 
-    @GetMapping(value = "/allActors")
+    @GetMapping(value = "/allActors") //child url
      public Iterable<Actor> getAllActors(){
         return actorService.getAllActors();
     }
@@ -42,4 +44,5 @@ public class ActorController {
     public Actor updateActor(@RequestBody Actor actor,@PathVariable("id") Long id){
         return actorService.updateActor(id,actor);
     }
+
 }

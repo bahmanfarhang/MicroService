@@ -1,7 +1,7 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor;
 import javax.persistence.*;
 /*
-* im using @entity to represent my table in the db - making a primary key
+* im using @Entity to represent my table in the db - making a primary key
 * this is an entity class, and it must follow some rules
 * using the @table class below to display data in tabular form and the name of my table is "actor"
 * important to know that the use of annotations is to help us to prevent using XML configuration - config method
@@ -10,6 +10,8 @@ import javax.persistence.*;
 @Table(name="actor")
 
 //actor class with private variables with setters and getters
+
+//this class is a model
 public class Actor {
     /*
     * @Id specifies the primary key of an entity - so my primary key in the db is now actor_id, first_name, last_name
@@ -20,9 +22,11 @@ public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
+    //why use Long? and not int
     private Long actor_id;
     private String first_name;
     private String last_name;
+
 
     //setter
     public void setActor_id(Long actor_id) {

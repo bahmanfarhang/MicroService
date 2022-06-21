@@ -1,6 +1,5 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor.Actor;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor.ActorRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

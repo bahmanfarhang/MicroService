@@ -12,6 +12,16 @@ import java.time.LocalDate;
 @Table(name = "film")
 
 public class Film {
+    public Film(Long film_id, String title, String description, Double rental_rate) {
+        this.film_id = film_id;
+        this.title = title;
+        this.description = description;
+        this.rental_rate = rental_rate;
+    }
+
+    public Film(){
+    }
+
     @Id
     /*
     * IDENTITY indicates that the persistence provider must assign primary key for entity using db identity column

@@ -8,7 +8,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/film")
+
+@CrossOrigin
+
 public class FilmController {
+
+
     @Autowired
     FilmService filmService;
 

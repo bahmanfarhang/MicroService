@@ -1,46 +1,52 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
+import com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor.Actor;
 import com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor.ActorRepository;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.Film;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.FilmController;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.FilmRepository;
-import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.FilmService;
-import io.cucumber.java.sl.In;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.web.servlet.MockMvc;
+//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.extension.ExtendWith;
+//import org.mockito.ArgumentCaptor;
+//import org.mockito.Mock;
+//import org.mockito.junit.jupiter.MockitoExtension;
+//import org.springframework.boot.test.context.SpringBootTest;
+//import static org.mockito.Mockito.verify;
+///*
+//* so i need to test to see if all my functionality is working or not
+//* im using a 3 layer architecture - controller(actorController), service(ActorService), repository(ActorRepository)
+////* */
+//@ExtendWith(MockitoExtension.class)
+//@SpringBootTest
+//public class MockitoTest {
+//
+//    //@Autowired helps me to inject dependency
+//    //these are my private variable, private so its in the scope of this class ONLY
+//    private MicroServiceProjectApplication microServiceProjectApplication;
+//    @Mock
+//    private ActorRepository actorRepository;
+//    private Actor actor;
+//
+//    @BeforeEach
+//    void setUp(){
+//        //constructor
+//        microServiceProjectApplication = new MicroServiceProjectApplication(actorRepository, actor);
+//    }
+//
+//    @Test
+//    public void getAllActors(){
+//        microServiceProjectApplication.getAllActors();
+//        verify(actorRepository).findAll();
+//    }
+//    @Test
+//    public void testAddActors(){
+//        Actor savedActor = new Actor();
+//        String expected = "Saved";
+//        String Actual = microServiceProjectApplication.addActor(savedActor.getActor_id(),savedActor.getFirst_name(),savedActor.getLast_name());
+//        ArgumentCaptor<Actor> cocktailArgumentCaptor = ArgumentCaptor.forClass(Actor.class);
+//        verify(actorRepository).save(cocktailArgumentCaptor.capture());
+//        cocktailArgumentCaptor.getValue();
+//        Assertions.assertEquals(expected,Actual,"Cocktail is not saved into the database");
+//    }
 
-import java.awt.print.Book;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+//}
 
-import static org.mockito.Mockito.verify;
-
-@ExtendWith(MockitoExtension.class)
-public class MockitoTest {
-    private MockMvc mockMvc;
-
-    ObjectMapper objectMapper = new ObjectMapper();
-    ObjectWriter objectWriter = objectMapper.writer();
-
-    @Mock
-    private FilmRepository filmRepository;
-
-    @InjectMocks
-    private FilmController filmController;
-
-    @Test
-    public void getAllActors_success() throws Exception{
-        //creating a list of books because my book is a list
-        List<Film> records = new ArrayList<>(Arrays.asList());
-    }
-}
