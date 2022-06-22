@@ -1,5 +1,6 @@
 package com.tsiBahmanFarhang.MicroServiceProjectApplication.Actor;
 
+import com.tsiBahmanFarhang.MicroServiceProjectApplication.Film.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -14,6 +15,13 @@ public class ActorService {
     //Autowired helps me with the injection of dependency
     @Autowired
     ActorRepository actorRepository;
+
+    public ActorService(ActorRepository actorRepository) {
+        this.actorRepository = actorRepository;
+    }
+
+    public ActorService(){
+    }
     /*
     * methods
     * using java List from generics for "Actor" so I can maintain the ordered collection

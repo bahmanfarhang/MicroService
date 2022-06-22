@@ -6,6 +6,12 @@ import javax.persistence.*;
 @Table(name = "country")
 public class Country {
 
+    public Country(Long country_id, String country){
+        this.country_id = country_id;
+        this.country = country;
+    }
+    public Country(){
+    }
     @Id
     /*
      * IDENTITY indicates that the persistence provider must assign primary key for entity using db identity column

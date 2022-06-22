@@ -7,6 +7,13 @@ import javax.persistence.*;
 @Entity
 @Table(name="category")
 public class Category {
+
+    public Category(Long category_id, String name){
+        this.category_id = category_id;
+        this.name = name;
+    }
+    public Category(){
+    }
     //the @Id notation specifies the PK in an entity
     //the @GeneratedValue helps how to specify how the PK of the entity should be generated
     @Id
@@ -14,7 +21,6 @@ public class Category {
 
     //private variables
     private Long category_id;
-
     private String name;
 
     //setters

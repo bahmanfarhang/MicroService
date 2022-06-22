@@ -12,6 +12,12 @@ public class CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
 
+    public CategoryService(CategoryRepository categoryRepository){
+        this.categoryRepository = categoryRepository;
+    }
+    public CategoryService(){
+    }
+
     //methods
     public List<Category> getAllCategory(){
         return categoryRepository.findAll();

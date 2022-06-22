@@ -13,12 +13,19 @@ import javax.persistence.*;
 
 //this class is a model
 public class Actor {
+    public Actor(Long actor_id, String first_name, String last_name){
+        this.actor_id = actor_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
+    public Actor(){
+    }
     /*
-    * @Id specifies the primary key of an entity - so my primary key in the db is now actor_id, first_name, last_name
-    * @GeneratedValue must be applied in conduction with @Id
-    * @GeneratedValue is used to specify how the primary key should be generated
-    * and the "strategy = GenerationType.IDENTITY" helps to generate automatic primary key for the entity
-    */
+     * @Id specifies the primary key of an entity - so my primary key in the db is now actor_id, first_name, last_name
+     * @GeneratedValue must be applied in conduction with @Id
+     * @GeneratedValue is used to specify how the primary key should be generated
+     * and the "strategy = GenerationType.IDENTITY" helps to generate automatic primary key for the entity
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
