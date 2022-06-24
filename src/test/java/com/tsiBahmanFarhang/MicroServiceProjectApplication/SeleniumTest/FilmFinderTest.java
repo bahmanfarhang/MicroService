@@ -2,27 +2,19 @@ package com.tsiBahmanFarhang.MicroServiceProjectApplication.SeleniumTest;// Gene
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
-import static org.junit.Assert.*;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.IsNot.not;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
+
 import java.util.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-public class ActorSeleniumTest {
+
+public class FilmFinderTest {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
@@ -30,6 +22,7 @@ public class ActorSeleniumTest {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver","C:\\Users\\Morgan Smith\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
         driver = new ChromeDriver();
+
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
     }
@@ -51,24 +44,27 @@ public class ActorSeleniumTest {
         return whNow.iterator().next();
     }
     @Test
-    public void actorTest() throws InterruptedException {
+    public void findFilmTest() throws InterruptedException {
         driver.get("http://localhost:3000");
         Thread.sleep(1000);
         driver.manage().window().setSize(new Dimension(1552, 840));
-        driver.findElement(By.cssSelector(".search:nth-child(1) input")).click();
-        driver.findElement(By.id("#clearBtn")).click();
-        driver.findElement(By.cssSelector(".search:nth-child(1) input")).sendKeys("tom");
-        driver.findElement(By.cssSelector(".search:nth-child(1) input")).click();
-        driver.findElement(By.cssSelector(".search:nth-child(1) input")).sendKeys("tom");
+        driver.findElement(By.cssSelector(".search:nth-child(2) input")).click();
+        driver.findElement(By.cssSelector(".search:nth-child(2) input")).clear();
+        driver.findElement(By.cssSelector(".search:nth-child(2) input")).sendKeys("tru");
+        //driver.findElement(By.cssSelector(".search:nth-child(2) input")).sendKeys(Keys.BACK_SPACE);
+        driver.findElement(By.id("searchBtn")).click();
+        driver.findElement(By.id("clearBtn")).click();
+        driver.findElement(By.cssSelector(".search:nth-child(2) input")).click();
+        driver.findElement(By.cssSelector(".search:nth-child(2) input")).sendKeys("tru");
         vars.put("window_handles", driver.getWindowHandles());
-        driver.findElement(By.cssSelector(".dataItem:nth-child(2) > p")).click();
-        vars.put("win1527", waitForWindow(2000));
-        driver.switchTo().window(vars.get("win1527").toString());
+        driver.findElement(By.cssSelector(".dataItem:nth-child(1) > p")).click();
+        vars.put("win4443", waitForWindow(2000));
+        driver.switchTo().window(vars.get("win4443").toString());
+
         {
             WebElement element = driver.findElement(By.linkText("WhatCulture"));
             Actions builder = new Actions(driver);
             builder.moveToElement(element).perform();
         }
     }
-
 }

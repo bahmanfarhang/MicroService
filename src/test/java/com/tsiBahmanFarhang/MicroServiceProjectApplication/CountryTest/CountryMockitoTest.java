@@ -39,7 +39,7 @@ public class CountryMockitoTest {
     }
     @Test
     public void getAllCountryTest(){
-        Country country = new Country();
+        Country country = new Country(1L,"America");
         List<Country> countryList = new ArrayList<Country>();
         countryList.add(country);
 
@@ -58,7 +58,7 @@ public class CountryMockitoTest {
     @Test
     public void addCountryTest(){
 
-        Country country = new Country();
+        Country country = new Country(1L, "USA");
         List<Country> countryList = new ArrayList<Country>();
         countryList.add(country);
 
@@ -76,7 +76,7 @@ public class CountryMockitoTest {
     }
     @Test
     public void updateTestId(){
-        Country country = new Country();
+        Country country = new Country(1L, "UK");
         when(countryRepository.existsById(1L)).thenReturn(true);
         when(countryRepository.save(country)).thenReturn(country);
         Country actual = countryService.updateCountry(1L, country);

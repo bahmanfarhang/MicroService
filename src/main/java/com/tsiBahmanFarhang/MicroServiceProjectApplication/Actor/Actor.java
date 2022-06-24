@@ -33,8 +33,6 @@ public class Actor {
     private Long actor_id;
     private String first_name;
     private String last_name;
-    // just to clarify , a front end app is an app consists of html , css and javascript code only. , you said that java project have
-    //that , can you show me the repository
 
     //setter
     public void setActor_id(Long actor_id) {

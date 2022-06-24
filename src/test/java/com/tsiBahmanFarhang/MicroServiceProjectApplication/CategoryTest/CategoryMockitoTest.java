@@ -38,7 +38,7 @@ public class CategoryMockitoTest {
     @Test
     public void getAllCategoryTest(){
         //first created a mock object which is a film
-        Category category = new Category(1L, "UK");
+        Category category = new Category(1L, "Horror");
         List<Category> categoryList = new ArrayList<Category>();
         categoryList.add(category);
 
@@ -65,7 +65,7 @@ public class CategoryMockitoTest {
     @Test
     public void addCategoryTest(){
 
-        Category category = new Category(1L, "UK");
+        Category category = new Category(1L, "Fantasy");
         List<Category> categoryList = new ArrayList<Category>();
         categoryList.add(category);
 
@@ -87,7 +87,7 @@ public class CategoryMockitoTest {
     }
     @Test
     public void updateTestId(){
-        Category category = new Category(1L, "Poland");
+        Category category = new Category(1L, "Romance");
         when(categoryRepository.existsById(1L)).thenReturn(true);
         when(categoryRepository.save(category)).thenReturn(category);
         Category actual = categoryService.updateCategory(1L, category);

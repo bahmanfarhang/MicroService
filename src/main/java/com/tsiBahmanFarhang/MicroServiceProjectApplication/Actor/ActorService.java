@@ -38,7 +38,7 @@ public class ActorService {
         actorRepository.deleteById(id);
     }
     public Actor updateActor(Long id, Actor actor) {
-        if(actorRepository.existsById(id)){
+        if(actorRepository.existsById(id)){ //must do 2 tests, 2 functions to get full coverage
             actor.setActor_id(id);
            return actorRepository.save(actor);
         }

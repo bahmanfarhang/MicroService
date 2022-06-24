@@ -17,15 +17,15 @@ import java.util.List;
 * */
 
 
-@RestController
-@RequestMapping("api/v1/actor") //parent url
+@RestController //this class will be a rest controller
+@RequestMapping("api/v1/actor") //parent url - and i will be mapping each method
 //this will allow the communication between the front end
 @CrossOrigin
 public class ActorController {
     @Autowired
     ActorService actorService;
 
-    @GetMapping(value = "/allActors") //child url
+    @GetMapping(value = "/allActors") //child url(can be) attaching this url to this function below
      public Iterable<Actor> getAllActors(){
         return actorService.getAllActors();
     }
